@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-# from prediction import execute
+from prediction import execute
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -33,8 +33,8 @@ async def demo_get():
 
 @app.post("/path")
 async def demo_post(inp: Msg):
-    # message = prediction(inp)
-    return {"message": "Hello world!"}
+    message = prediction(inp)
+    return {"message": message}
 
 
 @app.get("/path/{path_id}")
