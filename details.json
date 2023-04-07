@@ -1,0 +1,14 @@
+{
+  "details": {
+    "id": {
+      "Ceylon spinach": 0,
+      "Goose foot": 1,
+      "Shepherd Purse": 2
+    },
+    "information": {
+      "Ceylon spinach": "weed details/Ceylon spinach.txt",
+      "Goose foot": "weed details/Goose foot.txt",
+      "Shepherd Purse": "weed details/Shepherd Purse.txt"
+    }
+  }
+}

@@ -1,7 +1,21 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+# from prediction import execute
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Allow all origins
+origins = ["*"]
+
+# Add CORS middleware to the app
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Msg(BaseModel):
     msg: str
@@ -19,7 +33,8 @@ async def demo_get():
 
 @app.post("/path")
 async def demo_post(inp: Msg):
-    return {"message": inp.msg.upper()}
+    # message = prediction(inp)
+    return {"message": inp}
 
 
 @app.get("/path/{path_id}")
