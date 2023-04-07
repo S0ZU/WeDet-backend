@@ -34,7 +34,7 @@ async def demo_get():
 @app.post("/path")
 async def demo_post(inp: Msg):
     # message = prediction(inp)
-    return {"message": inp}
+    return {"message": "Hello world!"}
 
 
 @app.get("/path/{path_id}")
